@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+  }
+}
+
+:root, :host {
+  --luxury-white: #F2F3F4;
+  --luxury-black: #060D0D;
+}
+.container {
+  width: 100%;
+  @media (width >= 40rem) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem) {
+    max-width: 48rem;
+  }
+  @media (width >= 64rem) {
+    max-width: 64rem;
+  }
+  @media (width >= 80rem) {
+    max-width: 80rem;
+  }
+}
+
+.highlight-animate {
+    transition: all 0.7s cubic-bezier(.4,0,.2,1);
+}
+.highlight-hidden {
+    opacity: 0;
+}
+.highlight-left {
+    transform: translateX(-80px);
+}
+.highlight-right {
+    transform: translateX(80px);
+}
+.highlight-center {
+    transform: translateY(-80px);
+}
+.highlight-show {
+    opacity: 1;
+    transform: none;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+.home-blur {
+    transition: filter 0.4s cubic-bezier(.4,0,.2,1);
+    filter: blur(8px);
+}
