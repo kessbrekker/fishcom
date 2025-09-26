@@ -7,9 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --spacing: 0.25rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -163,20 +163,38 @@
   }
 }
 @layer utilities {
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .flex {
     display: flex;
   }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
+  .items-center {
+    align-items: center;
   }
-  .h-50 {
-    height: calc(var(--spacing) * 50);
+  .justify-between {
+    justify-content: space-between;
   }
-  .bg-red-400 {
-    background-color: var(--color-red-400);
+  .justify-center {
+    justify-content: center;
   }
-  .bg-red-500 {
-    background-color: var(--color-red-500);
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
@@ -184,68 +202,51 @@
   .text-center {
     text-align: center;
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 }
-@layer utilities {
-  @keyframes spin-slow {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  .animate-spin-slow {
-    animation: spin-slow 10s linear infinite;
-  }
-}
 :root, :host {
   --luxury-white: #F2F3F4;
   --luxury-black: #060D0D;
+  --fish-blue: rgb(2,130,202);
+  --fish-red: rgb(255,77,77);
+  --fish-sky-blue: rgb(231,249,255);
 }
-.container {
+body {
+  background-color: var(var(--luxury-white));
+  background-color: var(--luxury-white);
+  font-family: "Poppins", sans-serif;
+}
+.topbar {
+  background-color: var(--fish-red);
+  color: white;
+  height: 40px;
   width: 100%;
-  @media (width >= 40rem) {
-    max-width: 40rem;
-  }
-  @media (width >= 48rem) {
-    max-width: 48rem;
-  }
-  @media (width >= 64rem) {
-    max-width: 64rem;
-  }
-  @media (width >= 80rem) {
-    max-width: 80rem;
-  }
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
-.highlight-animate {
-  transition: all 0.7s cubic-bezier(.4,0,.2,1);
+header {
+  background-color: white;
+  height: 120px;
+  width: 100%;
 }
-.highlight-hidden {
-  opacity: 0;
+nav {
+  background-color: var(--fish-blue);
+  height: 50px;
+  width: 100%;
 }
-.highlight-left {
-  transform: translateX(-80px);
-}
-.highlight-right {
-  transform: translateX(80px);
-}
-.highlight-center {
-  transform: translateY(-80px);
-}
-.highlight-show {
-  opacity: 1;
-  transform: none;
-}
-html, body {
-  scroll-behavior: smooth;
-}
-.home-blur {
-  transition: filter 0.4s cubic-bezier(.4,0,.2,1);
-  filter: blur(8px);
+.header-search-input {
+  border-radius: 20px;
+  border: 1px solid var(--line-color);
+  height: 40px;
+  width: 280px;
+  padding: 10px 40px 10px 15px;
 }
 @property --tw-shadow {
   syntax: "*";

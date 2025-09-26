@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!------------------------------------------Meta------------------------------------------>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---------------------------------------Meta/Links--------------------------------------->
+    <link href="output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="output.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!------------------------------------Links/Components------------------------------------>
     <title>Fish.com</title>
+    <!---------------------------------------Components/--------------------------------------->
 </head>
 <body>
-    <div class="topbar bg-red-500 h-10"></div>
+    <div class="topbar flex justify-center">
+        <div class="container flex justify-between">
+            <div class="location-area flex items-center">
+                <a href="" class="flex gap-2">
+                    <i class="fa-solid fa-location-dot text-2xl"></i>
+                    <span>The Fish Company</span>
+                </a>
+            </div>
+            <div class="information-area flex items-center">
+                <span>3000TL ve üzeri siparişlerde kargo ücretsiz!</span>
+            </div>
+            <div class="social-area text-2xl flex items-center gap-2">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+    </div>
+    <header class="flex justify-center">
+        <div class="container flex justify-between">
+            <div class="logo"></div>
+            <div class="search-area">
+                <form onsubmit="return false;">
+                    <div class="header-search-input-box">
+                        <input type="text" class="header-search-input">
+                        <img src="assets/images/magnifier.svg" alt="Search" width="23" height="23">
+                    </div>
+                </form>
+            </div>
+            <div class="user-area"></div>
+        </div>
+    </header>
+    <nav class="flex justify-center">
+        <div class="container flex justify-between">
+            
+        </div>
+    </nav>
 </body>
 </html>

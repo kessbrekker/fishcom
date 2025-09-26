@@ -1,64 +1,43 @@
 @import "tailwindcss";
-
-@layer utilities {
-  @keyframes spin-slow {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .animate-spin-slow {
-    animation: spin-slow 10s linear infinite;
-  }
-}
-
+@tailwind utilities;
 :root, :host {
   --luxury-white: #F2F3F4;
   --luxury-black: #060D0D;
+  --fish-blue: rgb(2,130,202);
+  --fish-red: rgb(255,77,77);
+  --fish-sky-blue: rgb(231,249,255);
 }
-.container {
+
+body{
+  background-color: var(--luxury-white);
+  font-family: "Poppins", sans-serif
+}
+
+.topbar{
+  
+  background-color: var(--fish-red);
+  color: white;
+  height: 40px;
   width: 100%;
-  @media (width >= 40rem) {
-    max-width: 40rem;
-  }
-  @media (width >= 48rem) {
-    max-width: 48rem;
-  }
-  @media (width >= 64rem) {
-    max-width: 64rem;
-  }
-  @media (width >= 80rem) {
-    max-width: 80rem;
-  }
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
-.highlight-animate {
-    transition: all 0.7s cubic-bezier(.4,0,.2,1);
-}
-.highlight-hidden {
-    opacity: 0;
-}
-.highlight-left {
-    transform: translateX(-80px);
-}
-.highlight-right {
-    transform: translateX(80px);
-}
-.highlight-center {
-    transform: translateY(-80px);
-}
-.highlight-show {
-    opacity: 1;
-    transform: none;
+header{
+  background-color: white;
+  height: 120px;
+  width: 100%;
 }
 
-html, body {
-    scroll-behavior: smooth;
+nav{
+  background-color: var(--fish-blue);
+  height: 50px;
+  width: 100%;
 }
-.home-blur {
-    transition: filter 0.4s cubic-bezier(.4,0,.2,1);
-    filter: blur(8px);
+.header-search-input {
+    border-radius: 20px;
+    border: 1px solid var(--line-color);
+    height: 40px;
+    width: 280px;
+    padding: 10px 40px 10px 15px;
 }
