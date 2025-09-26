@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0.0 0.0 1198.6 421.9" zoomAndPan="magnify" style="fill: rgb(0, 0, 0);" original_string_length="823" width="60px" height="20px">
+	<g>
+		<image xlink:href="./assets/effect.png" x="1078" y="0" width="120" height="120" />
+		<g>
+			<g id="__id0_s6yujuxp9r">
+				<path d="M14.62861 14.62861L131.15542 421.94439 1069.1606 327.00645 1198.58249 91.27373 14.62861 14.62861z" style="fill: rgb(255, 137, 129);"/>
+			</g>
+			<g id="__id1_s6yujuxp9r">
+				<path d="M0 0L116.52681 407.31578 1054.532 312.37784 1183.95388 76.64512 0 0z" style="fill: rgb(230, 0, 18);"/>
+			</g>
+			<g id="__id2_s6yujuxp9r">
+				<path d="M125.88797,393.50453l-.41905-1.47143L17.30675,13.94882l2.59048,.16905L1163.05247,88.11806l-116.50505,212.20053-.95238,.09762L125.88797,393.50453ZM22.24962,17.93455l106.31455,371.62236,915.70705-92.68118,112.80981-205.48147L22.24962,17.93455Z" style="fill: rgb(255, 255, 255);"/>
+			</g>
+		</g>
+	</g>
+</svg>

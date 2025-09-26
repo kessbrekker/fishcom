@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!------------------------------------Links/Components------------------------------------>
     <title>Fish.com</title>
@@ -28,17 +28,17 @@
                 <span>3000TL ve üzeri siparişlerde kargo ücretsiz!</span>
             </div>
             <div class="social-area">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-                <i class="fa-brands fa-linkedin"></i>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </div>
     <header>
         <div class="container flex justify-between items-center">
             <div class="logo">
-                <img src="assets/logo.png" alt="">
+                <img src="assets/logo.svg" alt="">
             </div>
             <div class="search-area">
                 <form action="/submit">
@@ -96,7 +96,7 @@
         </div>
     </nav>
     <section class="hero">
-        <div class="container flex justify-start items-center">
+        <div class="container flex justify-between items-center relative">
             <div class="hero-title">
                 <h1 class="text-5xl font-extrabold leading-15">Gurme Serisi Pesto Soslu Dil Balığı Dolmasını Denediniz mi ?</h1>
                 <p class="text-2xl font-medium">Menünüze yeni tatlar katmak için ürünü hemen sipariş edin.</p>
@@ -109,7 +109,65 @@
                     </div>
                 </a>
             </div>
+            <div class="hero-product">
+                <div class="price-area">
+                    <img class="size-full block" src="assets/price-bg.svg">
+                    <img class="absolute top-0 right-0 size-13 -mt-5 -mr-5" src="assets/effect.png" >
+                    <span class="absolute inset-0 flex items-center justify-start ml-15 text-3xl font-bold text-white pointer-events-none text-shadow-lg">400 TL</span>
+                </div>
+                <img class="h-150 w-auto" src="assets/urun.webp" alt="">
+            </div>
+        </div>
+        <div class="hero-social">
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </section>
+    <section class="features">
+        <div class="container flex justify-between py-15">
+           <div class="feature-box">
+                <div class="feature-cycle border-[var(--fish-red)]">
+                    <img src="assets/balik.jpg" alt="">
+                </div>
+                <span>Kampanyalar</span>
+           </div>
+           <div class="feature-box">
+                <div class="feature-cycle border-[var(--fish-pink)]">
+                    <img src="assets/balik.jpg" alt="">
+                </div>
+                <span>Yeni Gelenler</span>
+           </div>
+           <div class="feature-box">
+                <div class="feature-cycle border-[var(--fish-yellow)]">
+                    <img src="assets/balik.jpg" alt="">
+                </div>
+                <span>Bu Ayı Birincileri</span>
+           </div>
+           <div class="feature-box">
+                <div class="feature-cycle border-[var(--fish-pink)]">
+                    <img src="assets/balik.jpg" alt="">
+                </div>
+                <span>Haftanın Ürünü</span>
+           </div>
+           <div class="feature-box">
+                <div class="feature-cycle border-[var(--fish-red)]">
+                    <img src="assets/balik.jpg" alt="">
+                </div>
+                <span>Avantajlı Ürünler</span>
+           </div>
+           <div class="feature-box">
+                <div class="feature-cycle border-[var(--fish-brown)]">
+                    <img src="assets/balik.jpg" alt="">
+                </div>
+                <span>Birlikte Al Kazan</span>
+           </div>
+        </div>
+    </section>
+    <section class="products">
+        
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>
