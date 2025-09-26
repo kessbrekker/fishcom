@@ -16,42 +16,100 @@
     <!---------------------------------------Components/--------------------------------------->
 </head>
 <body>
-    <div class="topbar flex justify-center">
+    <div class="topbar">
         <div class="container flex justify-between">
-            <div class="location-area flex items-center">
+            <div class="location-area">
                 <a href="" class="flex gap-2">
-                    <i class="fa-solid fa-location-dot text-2xl"></i>
+                    <i class="fa-solid fa-location-dot text-xl"></i>
                     <span>The Fish Company</span>
                 </a>
             </div>
-            <div class="information-area flex items-center">
+            <div class="information-area">
                 <span>3000TL ve üzeri siparişlerde kargo ücretsiz!</span>
             </div>
-            <div class="social-area text-2xl flex items-center gap-2">
+            <div class="social-area">
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-linkedin"></i>
             </div>
         </div>
     </div>
-    <header class="flex justify-center">
-        <div class="container flex justify-between">
-            <div class="logo"></div>
+    <header>
+        <div class="container flex justify-between items-center">
+            <div class="logo">
+                <img src="assets/logo.png" alt="">
+            </div>
             <div class="search-area">
-                <form onsubmit="return false;">
-                    <div class="header-search-input-box">
+                <form action="/submit">
+                    <div class="search-btn">
                         <input type="text" class="header-search-input">
-                        <img src="assets/images/magnifier.svg" alt="Search" width="23" height="23">
+                        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
                     </div>
                 </form>
             </div>
-            <div class="user-area"></div>
+            <div class="user-area">
+                <div class="user-account">
+                    <a href="">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Hesabım</span>
+                    </a>
+                </div>
+                <div class="user-favorites">
+                    <a href="">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>Favorilerim</span>
+                    </a>
+                </div>
+                <div class="user-cart">
+                    <a href="">
+                        <i class="fa-brands fa-opencart"></i>
+                        <span>Sepetim</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
-    <nav class="flex justify-center">
+    <nav>
         <div class="container flex justify-between">
-            
+            <div class="features-nav">
+                <i class="fa-solid fa-bars text-2xl"></i>
+                <ul>
+                    <li><a href="">Ürünler</a></li>
+                    <li><a href="">Yeni Gelenler</a></li>
+                    <li><a href="">Kampanyalar</a></li>
+                    <li><a href="">Birlikte Al Kazan</a></li>
+                </ul>
+            </div>
+            <div class="user-nav">
+                <ul>
+                    <li><a href="">
+                        <i class="fa-solid fa-clock-rotate-left text-2xl"></i>
+                        Önceki Siparişlerim
+                    </a></li>
+                    <li><a href="">
+                        <i class="fa-solid fa-star text-2xl"></i>
+                        Yeni Ürünlerim
+                    </a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+    <section class="hero">
+        <div class="container flex justify-start items-center">
+            <div class="hero-title">
+                <h1 class="text-5xl font-extrabold leading-15">Gurme Serisi Pesto Soslu Dil Balığı Dolmasını Denediniz mi ?</h1>
+                <p class="text-2xl font-medium">Menünüze yeni tatlar katmak için ürünü hemen sipariş edin.</p>
+                <a href="" class="fish-button">
+                    <div class="fish-image">
+                        <img src="assets/fishble.png" alt="">
+                        <span>
+                            Satın Al
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

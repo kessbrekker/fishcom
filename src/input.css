@@ -1,43 +1,112 @@
 @import "tailwindcss";
 @tailwind utilities;
+
 :root, :host {
   --luxury-white: #F2F3F4;
   --luxury-black: #060D0D;
-  --fish-blue: rgb(2,130,202);
-  --fish-red: rgb(255,77,77);
+  --fish-blue: #0282ca;
+  --fish-red: #ff4d4d;
   --fish-sky-blue: rgb(231,249,255);
+  --line-color: #d2d2d2;
 }
-
 body{
   background-color: var(--luxury-white);
   font-family: "Poppins", sans-serif
 }
 
 .topbar{
-  
-  background-color: var(--fish-red);
-  color: white;
+  @apply flex justify-center bg-[var(--fish-red)] text-white font-light tracking-wider text-sm;
   height: 40px;
   width: 100%;
-  font-weight: 300;
-  letter-spacing: 0.5px;
 }
+/*----------------inTopbar----------------*/
+.location-area{
+  @apply flex items-center;
+}
+.information-area{
+  @apply flex items-center;
+}
+.social-area{
+  @apply  text-2xl flex items-center gap-5;
+}
+/*----------------inTopbar----------------*/
 
 header{
-  background-color: white;
+  @apply flex justify-center bg-white;
   height: 120px;
   width: 100%;
 }
+/*----------------inHeader----------------*/
+.logo{
+  width: fit-content;
+  height: 100%;
+}
+.logo img{
+  width: fit-content;
+  height: 100%;
+}
+.header-search-input{
+  @apply rounded-3xl border border-[var(--line-color)] focus:outline-none ;
+  width: 500px;
+  height: 40px;
+  padding: 10px 40px 10px 15px;
+}
+.header-search-icon{
+  @apply absolute top-1/2 right-3 -translate-y-1/2 text-[var(--line-color)] text-2xl cursor-pointer;
+}
+.search-btn{
+  @apply relative;
+}
+.user-area{
+  @apply flex items-center gap-6;
+}
+.user-account a, .user-favorites a, .user-cart a{
+  @apply flex flex-col items-center font-medium;
+}
+/*----------------inHeader----------------*/
 
 nav{
-  background-color: var(--fish-blue);
-  height: 50px;
+  @apply flex justify-center bg-[var(--fish-blue)] text-[var(--luxury-white)];
+  height: 55px;
   width: 100%;
 }
-.header-search-input {
-    border-radius: 20px;
-    border: 1px solid var(--line-color);
-    height: 40px;
-    width: 280px;
-    padding: 10px 40px 10px 15px;
+
+/*----------------inNav----------------*/
+.features-nav{
+  @apply flex items-center gap-3;
 }
+.features-nav ul{
+  @apply flex items-center gap-8  font-medium text-lg;
+}
+.user-nav{
+  @apply flex items-center;
+}
+.user-nav ul{
+  @apply flex items-center gap-8 font-medium text-lg;
+}
+/*----------------inNav----------------*/
+
+section.hero{
+  @apply flex justify-center bg-[var(--fish-sky-blue)];
+  background-image: url("assets/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 700px;
+}
+
+/*----------------inHero----------------*/
+.hero-title{
+  @apply w-5/12 flex flex-col gap-4;
+  font-family: 'montserrat', sans-serif;
+}
+.fish-button{
+  @apply size-fit mt-5;
+}
+.fish-image{
+  @apply w-35 relative inline-block;
+}
+.fish-image span{
+  @apply absolute inset-0 flex items-center justify-end text-lg font-extrabold text-white pr-5 pt-1;
+}
+/*----------------inHero----------------*/
