@@ -1,23 +1,37 @@
 let lastScroll = 0;
-        const topbar = document.getElementById('topbar');
-        const header = document.getElementById('header');
+const topbar = document.getElementById('topbar');
+const header = document.getElementById('header');
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
 
-            if (currentScroll <= 0) { 
-                // En üstteyken hepsi gözükür
-                topbar.style.transform = 'translateY(0)';
-                header.style.transform = 'translateY(0)';
-            } else if (currentScroll > lastScroll) {
-                // Aşağı kaydır -> gizle topbar + header
-                topbar.style.transform = 'translateY(-100%)';
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                // Yukarı kaydır -> göster topbar + header
-                topbar.style.transform = 'translateY(0)';
-                header.style.transform = 'translateY(0)';
-            }
+    if (currentScroll <= 0) { 
+        // En üstteyken hepsi gözükür
+        topbar.style.transform = 'translateY(0)';
+        header.style.transform = 'translateY(0)';
+    } else if (currentScroll > lastScroll) {
+        // Aşağı kaydır -> gizle topbar + header
+        topbar.style.transform = 'translateY(-100%)';
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        // Yukarı kaydır -> göster topbar + header
+        topbar.style.transform = 'translateY(0)';
+        header.style.transform = 'translateY(0)';
+    }
 
-            lastScroll = currentScroll;
-        });
+    lastScroll = currentScroll;
+});
+
+
+const navbarList = document.getElementById('products-navbar-list');
+if(navbarList){
+  navbarList.querySelectorAll('li').forEach(li => {
+    li.addEventListener('click', function(e){
+      e.preventDefault();
+      navbarList.querySelectorAll('li').forEach(item => {
+        item.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+}

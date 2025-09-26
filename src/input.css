@@ -13,10 +13,8 @@
   --line-color: #d2d2d2;
 }
 body{
-  background-color: var(--luxury-white);
   font-family: "Poppins", sans-serif
 }
-
 .topbar{
   @apply flex justify-center bg-[var(--fish-red)] text-white font-light tracking-wider text-sm;
   height: 40px;
@@ -150,3 +148,51 @@ section.hero{
   object-fit: cover;
 }
 /*----------------inFeatures----------------*/
+
+.products{
+  @apply flex justify-center;
+}
+
+/*----------------inProducts----------------*/
+
+
+.products-navbar ul{
+  @apply flex items-center gap-8 font-medium text-2xl;
+}
+.products-navbar ul li{
+  @apply cursor-pointer hover:text-[var(--fish-red)] transition duration-300;
+}
+.products-navbar ul li.active a {
+  color: var(--fish-red) !important;
+}
+.products-area{
+  @apply flex flex-wrap w-full;
+}
+.products-box{
+  position: relative;
+  @apply w-1/4 p-5;
+}
+.products-card{
+  
+  @apply size-full transition duration-300 z-10 bg-white;
+}
+.products-box::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px 1px rgba(0, 0, 0, 0.72);
+  z-index: -10;
+}
+.products-card > * {
+  position: relative;
+  z-index: 1;
+}
+.products-card .title-area{
+  @apply p-7 flex flex-col;
+}
+/*----------------inProducts----------------*/
