@@ -16,18 +16,18 @@
     <!---------------------------------------Components/--------------------------------------->
 </head>
 <body>
-    <div class="topbar">
+    <div class="topbar flex justify-center text-white font-light tracking-wider text-sm">
         <div class="container flex justify-between">
-            <div class="location-area">
+            <div class="location-area flex items-center">
                 <a href="" class="flex gap-2">
                     <i class="fa-solid fa-location-dot text-xl"></i>
                     <span>The Fish Company</span>
                 </a>
             </div>
-            <div class="information-area">
+            <div class="information-area flex items-center">
                 <span>3000TL ve üzeri siparişlerde kargo ücretsiz!</span>
             </div>
-            <div class="social-area">
+            <div class="social-area text-2xl flex items-center gap-5">
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
                 <a href=""><i class="fa-brands fa-facebook"></i></a>
                 <a href=""><i class="fa-brands fa-whatsapp"></i></a>
@@ -35,20 +35,20 @@
             </div>
         </div>
     </div>
-    <header>
+    <header class="flex justify-center bg-white p-2">
         <div class="container flex justify-between items-center">
-            <div class="logo">
-                <img src="assets/logo.svg" alt="">
+            <div class="logo w-fit h-full">
+                <img class="w-fit h-full" src="assets/logo.svg" alt="">
             </div>
             <div class="search-area">
                 <form action="/submit">
-                    <div class="search-btn">
-                        <input type="text" class="header-search-input">
-                        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+                    <div class="search-btn relative">
+                        <input type="text" class="header-search-input rounded-3xl border border-[var(--line-color)] focus:outline-none">
+                        <i class="fa-solid fa-magnifying-glass absolute top-1/2 right-3 -translate-y-1/2 text-[var(--line-color)] text-2xl cursor-pointer"></i>
                     </div>
                 </form>
             </div>
-            <div class="user-area">
+            <div class="user-area flex items-center gap-6">
                 <div class="user-account">
                     <a href="">
                         <i class="fa-regular fa-user"></i>
@@ -70,19 +70,19 @@
             </div>
         </div>
     </header>
-    <nav>
+    <nav class="flex justify-center sticky top-0 z-50">
         <div class="container flex justify-between">
-            <div class="features-nav">
+            <div class="features-nav flex items-center gap-3">
                 <i class="fa-solid fa-bars text-2xl"></i>
-                <ul>
+                <ul class="flex items-center gap-8  font-medium text-lg">
                     <li><a href="">Ürünler</a></li>
                     <li><a href="">Yeni Gelenler</a></li>
                     <li><a href="">Kampanyalar</a></li>
                     <li><a href="">Birlikte Al Kazan</a></li>
                 </ul>
             </div>
-            <div class="user-nav">
-                <ul>
+            <div class="user-nav flex items-center">
+                <ul class="flex items-center gap-8 font-medium text-lg">
                     <li><a href="">
                         <i class="fa-solid fa-clock-rotate-left text-2xl"></i>
                         Önceki Siparişlerim
@@ -95,22 +95,22 @@
             </div>
         </div>
     </nav>
-    <section class="hero">
+    <section class="hero flex justify-center">
         <div class="container flex justify-between items-center relative">
-            <div class="hero-title">
+            <div class="hero-title w-5/12 flex flex-col gap-4">
                 <h1 class="text-5xl font-extrabold leading-15">Gurme Serisi Pesto Soslu Dil Balığı Dolmasını Denediniz mi ?</h1>
                 <p class="text-2xl font-medium">Menünüze yeni tatlar katmak için ürünü hemen sipariş edin.</p>
-                <a href="" class="fish-button">
-                    <div class="fish-image">
+                <a href="" class="fish-button size-fit mt-5">
+                    <div class="fish-image w-35 relative inline-block">
                         <img src="assets/fishble.png" alt="">
-                        <span>
+                        <span class="absolute inset-0 flex items-center justify-end text-lg font-extrabold text-white pr-5 pt-1">
                             Satın Al
                         </span>
                     </div>
                 </a>
             </div>
-            <div class="hero-product">
-                <div class="price-area">
+            <div class="hero-product flex flex-col items-end justify-end h-full relative">
+                <div class="price-area h-fit w-60 relative top-30 right-10 flex items-center justify-center">
                     <img class="size-full block" src="assets/price-bg.svg">
                     <img class="absolute top-0 right-0 size-13 -mt-5 -mr-5" src="assets/effect.png" >
                     <span class="absolute inset-0 flex items-center justify-start ml-15 text-3xl font-bold text-white pointer-events-none text-shadow-lg">400 TL</span>
@@ -118,14 +118,14 @@
                 <img class="h-150 w-auto" src="assets/urun.webp" alt="">
             </div>
         </div>
-        <div class="hero-social">
+        <div class="hero-social absolute flex flex-col gap-4 text-3xl">
             <a href=""><i class="fa-brands fa-instagram"></i></a>
             <a href=""><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-whatsapp"></i></a>
             <a href=""><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </section>
-    <section class="features">
+    <section class="features flex justify-center">
         <div class="container flex justify-between py-15">
            <div class="feature-box">
                 <div class="feature-cycle border-[var(--fish-red)]">
@@ -165,14 +165,14 @@
            </div>
         </div>
     </section>
-    <section class="products">
+    <section class="products flex justify-center">
         <div class="container flex flex-col items-center gap-5">
             <div class="products-title">
                 <h2 class="text-4xl font-medium">Balık Gruplarımız</h2>
                 <hr class="my-2 border-t-2 border-2 border-[var(--fish-red)] w-1/2 mx-auto">
             </div>
             <div class="products-navbar">
-                <ul id="products-navbar-list">
+                <ul class="flex items-center gap-8 font-medium text-2xl" id="products-navbar-list">
                     <li class="active"><a href="">Klasik</a></li>
                     <li><a href="">Retail</a></li>
                     <li><a href="">Marinat</a></li>
@@ -183,19 +183,20 @@
                     <li><a href="">Tümünü Göster</a></li>
                 </ul>
             </div>
-            <div class="products-area">
+            <div class="products-area flex flex-wrap w-full">
                 <div class="products-box">
                     <div class="products-card">
                         <div class="image-area">
+                            <span>Glütensz</span>
                             <img src="assets/yemek1.webp" alt="">
                         </div>
                         <div class="title-area">
                             <div class="flex justify-between items-center">
                                 <span>Balık Köftesi</span>
-                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-heart favorite-icon cursor-pointer"></i>
                             </div>
                             <span class="text-xs font-extralight">200gr, 4 adet</span>
-                            <span class="my-3">300 TL</span>
+                            <span class="my-5 font-medium">300 TL</span>
                             <div class="flex justify-between items-center text-xs font-extralight">
                                 <span>1200 TL / Paket</span>
                                 <span>Koli İçi Adet: 20</span>
