@@ -193,7 +193,6 @@ section.hero{
   justify-content: center;
   transition: all;
   pointer-events: auto;
-  @apply  hover:bg-[var(--fish-blue)] hover:text-white transition pointer-events-auto;
 }
 .image-area .fast-buttons button:hover{
   background-color: var(--fish-blue);
