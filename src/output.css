@@ -32,8 +32,7 @@
     --font-weight-extrabold: 800;
     --tracking-wider: 0.05em;
     --radius-3xl: 1.5rem;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-bounce: bounce 1s infinite;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -259,6 +258,12 @@
   .-mr-5 {
     margin-right: calc(var(--spacing) * -5);
   }
+  .ml-1 {
+    margin-left: calc(var(--spacing) * 1);
+  }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
   .ml-15 {
     margin-left: calc(var(--spacing) * 15);
   }
@@ -295,6 +300,9 @@
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
+  .w-1\/3 {
+    width: calc(1/3 * 100%);
+  }
   .w-5\/12 {
     width: calc(5/12 * 100%);
   }
@@ -319,6 +327,9 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .animate-bounce {
+    animation: var(--animate-bounce);
   }
   .cursor-pointer {
     cursor: pointer;
@@ -365,6 +376,9 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
   }
@@ -401,8 +415,8 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
-  .py-15 {
-    padding-block: calc(var(--spacing) * 15);
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
   }
   .pt-1 {
     padding-top: calc(var(--spacing) * 1);
@@ -476,11 +490,23 @@
     --tw-tracking: var(--tracking-wider);
     letter-spacing: var(--tracking-wider);
   }
+  .text-\[var\(--fish-blue\)\] {
+    color: var(--fish-blue);
+  }
+  .text-\[var\(--fish-red\)\] {
+    color: var(--fish-red);
+  }
   .text-\[var\(--line-color\)\] {
     color: var(--line-color);
   }
   .text-white {
     color: var(--color-white);
+  }
+  .line-through {
+    text-decoration-line: line-through;
+  }
+  .opacity-60 {
+    opacity: 60%;
   }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -609,18 +635,7 @@ section.hero {
   transition: all 0.3s;
   background-color: white;
   z-index: 10;
-}
-.products-box::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  box-shadow: 0 15px 40px 1px rgba(0, 0, 0, 0.52);
-  z-index: -10;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px, rgba(0, 0, 0, 0.1) 0px 8px 74px;
 }
 .products-card > * {
   position: relative;
@@ -673,15 +688,22 @@ section.hero {
 .image-area .fast-buttons button {
   background-color: white;
   padding: 5px;
+  width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all;
   pointer-events: auto;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
 }
-.image-area .fast-buttons button:hover {
-  background-color: var(--fish-blue);
-  color: white;
+.whyus-container {
+  background-image: url("assets/whyusbg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 738px;
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -808,6 +830,16 @@ section.hero {
   syntax: "<percentage>";
   inherits: false;
   initial-value: 100%;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {

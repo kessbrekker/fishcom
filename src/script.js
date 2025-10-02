@@ -49,3 +49,21 @@ document.querySelectorAll('.favorite-icon').forEach(function(icon){
     }
   });
 });
+
+document.querySelectorAll('.opencart-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    const icon = btn.querySelector('i');
+    if(icon.classList.contains('fa-opencart')){
+      icon.classList.remove('fa-opencart','fa-brands');
+      icon.classList.add('fa-check','fa-solid','animate-bounce');
+      icon.style.color = 'var(--fish-green)';
+      setTimeout(function(){
+        icon.classList.remove('animate-bounce');
+      }, 600);
+    } else {
+      icon.classList.remove('fa-check','fa-solid');
+      icon.classList.add('fa-opencart','fa-brands');
+      icon.style.color = '';
+    }
+  });
+});
