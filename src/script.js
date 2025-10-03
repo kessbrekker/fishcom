@@ -5,18 +5,17 @@ const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll <= 0) { 
-        // En üstteyken hepsi gözükür
-        topbar.style.transform = 'translateY(0)';
-        header.style.transform = 'translateY(0)';
-    } else if (currentScroll > lastScroll) {
-        // Aşağı kaydır -> gizle topbar + header
-        topbar.style.transform = 'translateY(-100%)';
-        header.style.transform = 'translateY(-100%)';
-    } else {
-        // Yukarı kaydır -> göster topbar + header
-        topbar.style.transform = 'translateY(0)';
-        header.style.transform = 'translateY(0)';
+    if (topbar && header) {
+        if (currentScroll <= 0) { 
+            topbar.style.transform = 'translateY(0)';
+            header.style.transform = 'translateY(0)';
+        } else if (currentScroll > lastScroll) {
+            topbar.style.transform = 'translateY(-100%)';
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            topbar.style.transform = 'translateY(0)';
+            header.style.transform = 'translateY(0)';
+        }
     }
 
     lastScroll = currentScroll;
@@ -65,5 +64,14 @@ document.querySelectorAll('.opencart-btn').forEach(function(btn){
       icon.classList.add('fa-opencart','fa-brands');
       icon.style.color = '';
     }
+  });
+});
+
+document.querySelectorAll('.specials-btn').forEach(function(btn){
+  btn.addEventListener('mouseenter', function(){
+    btn.querySelector('.specials-btn-bg').style.width = '100%';
+  });
+  btn.addEventListener('mouseleave', function(){
+    btn.querySelector('.specials-btn-bg').style.width = '0';
   });
 });

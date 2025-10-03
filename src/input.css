@@ -140,9 +140,16 @@ section.hero{
   top: 25px;
   color: var(--luxury-white);
   font-size: 11px;
-  padding-inline: 10px;
+  padding-inline: 12px;
   padding-block: 4px;
   z-index: 10;
+}
+.image-area img{
+  overflow-y: auto;
+  width: 100%;
+  height: 230px;
+  background-position: center;
+  object-fit: cover;
 }
 .image-area .guluten-free{
   background-color: var(--fish-green);
@@ -153,11 +160,14 @@ section.hero{
 .image-area .nothing{
   display: none;
 }
-.image-area .offsale{
+.image-area .offsale, .new{
   background-color: var(--fish-red);
 }
 .image-area .offsale::before{
   content: "İndirimli";
+}
+.image-area .new::before{
+  content: "Yeni";
 }
 .image-area .fast-buttons{
   position: absolute;
@@ -196,7 +206,7 @@ section.hero{
   width: 100%;
   height: 738px;
 }
-.whyus-titlr{
+.whyus-title{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -242,3 +252,10 @@ article .article-content .content-img{
   position: relative;
 }
 /*----------------endWhyus----------------*/
+/*----------------Specials----------------*/
+.specials{
+  background-color: var(--luxury-white);
+  width: 100%;
+  height: 650px;
+}
+/*----------------endSpecials----------------*/
