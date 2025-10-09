@@ -6,9 +6,11 @@
   --fish-blue: #0282ca;
   --fish-red: #ff4d4d;
   --fish-sky-blue: #e7f9ff;
+  --fish-sea-blue: #e8f8ff;
   --fish-pink: #FF8880;
   --fish-yellow: #EED466;
   --fish-brown: #D4C29B;
+  --fish-teal: #23c5cd;
   --fish-green: #2CB673;
   --line-color: #d2d2d2;
 }
@@ -47,7 +49,7 @@ header{
 /*----------------endHeader----------------*/
 /*----------------Nav----------------*/
 nav{
-  background-color: var(--fish-blue);
+  background: linear-gradient(135deg, var(--fish-teal) 0%, var(--fish-blue) 100%);
   color: var(--luxury-white);
   height: 55px;
   width: 100%;
@@ -487,3 +489,24 @@ article .article-content .content-img{
   .play-circle-text { animation: none !important; }
 }
 /*----------------endSpecialRecipes----------------*/
+/*----------------Newest----------------*/
+.newest{
+  background-color: var(--fish-sea-blue);
+}
+/*----------------endNewest----------------*/
+/*----------------Footer----------------*/
+footer{
+  background: linear-gradient(135deg, var(--fish-teal) 0%, var(--fish-blue) 100%);
+  padding: 48px 0;
+}
+
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+footer a{ color: inherit; text-decoration: none; }
+
+/*----------------endFooter----------------*/
