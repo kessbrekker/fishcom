@@ -75,3 +75,49 @@ document.querySelectorAll('.specials-btn').forEach(function(btn){
     btn.querySelector('.specials-btn-bg').style.width = '0';
   });
 });
+
+// Inject a favorite (star) button into each recipe-card and wire up toggle behavior
+document.querySelectorAll('.recipe-card').forEach(function(card){
+  // create button
+  const btn = document.createElement('button');
+  btn.className = 'recipe-fav-btn';
+  btn.type = 'button';
+  btn.setAttribute('aria-pressed','false');
+  btn.setAttribute('aria-label','Favorilere ekle');
+  // use FontAwesome empty star by default
+  btn.innerHTML = '<i class="fa-regular fa-star"></i>';
+  // prepend to card so it's on top-left
+  card.appendChild(btn);
+
+  function toggleFav(){
+    const icon = btn.querySelector('i');
+    const isActive = btn.classList.toggle('active');
+    if(isActive){
+      // filled star
+      icon.classList.remove('fa-regular');
+      icon.classList.add('fa-solid');
+      btn.setAttribute('aria-pressed','true');
+      btn.setAttribute('aria-label','Favorilerden çıkar');
+    } else {
+      icon.classList.remove('fa-solid');
+      icon.classList.add('fa-regular');
+      btn.setAttribute('aria-pressed','false');
+      btn.setAttribute('aria-label','Favorilere ekle');
+      // remove focus so an empty star will hide immediately when mouse leaves
+      try { btn.blur(); } catch(e) {}
+    }
+  }
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    toggleFav();
+  });
+
+  // keyboard accessibility: toggle on Enter / Space
+  btn.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      toggleFav();
+    }
+  });
+});

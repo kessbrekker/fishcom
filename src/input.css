@@ -140,7 +140,12 @@ section.hero{
   display: flex;
   flex-direction: column;
   padding: 28px;
+  
 }
+.title-area i{
+  transition: all 120ms ease;
+}
+.title-area i:active{ transform: scale(0.95); }
 .image-area span{
   position: absolute;
   top: 25px;
@@ -282,6 +287,7 @@ article .article-content .content-img{
   height: 50%;
   width: 50%;
   padding: 20px;
+  position: relative;
 }
 .recipe-box .recipe-card{
   height: 100%;
@@ -309,7 +315,7 @@ article .article-content .content-img{
 .recipe-box .recipe-card > *{
   z-index: 2;
 }
-.recipe-box .recipe-card::after{
+.recipe-box .recipe-card .over::after{
   content: "";
   position: absolute;
   left: 0;
@@ -321,7 +327,7 @@ article .article-content .content-img{
   pointer-events: none;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-      border-radius: 16px;
+  border-radius: 16px;
 
 }
 .recipe-box .recipe-card .recipe-bg-img{
@@ -333,9 +339,76 @@ article .article-content .content-img{
   border-radius: 16px;
   z-index: 0;
 }
+
+/* Favorite star button (hidden by default, shown on hover) */
+
+.recipe-card .recipe-fav-btn{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  display: flex; /* always in DOM to preserve layout/focus */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 6;
+  cursor: pointer;
+  color: #ffffff;
+  /* hidden initially */
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), opacity 180ms ease;
+}
+
+/* grow-in (no fade-in delay) when card is hovered, card has focus-within, or button itself receives focus */
+.recipe-card:hover .recipe-fav-btn,
+.recipe-card:focus-within .recipe-fav-btn,
+.recipe-fav-btn:focus {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* show on hover of the card */
+.recipe-card:hover .recipe-fav-btn{ display: flex; }
+
+.recipe-fav-btn i{ font-size: 18px; pointer-events: none; }
+
+/* active (favorited) state */
+.recipe-fav-btn.active i{
+  color: var(--fish-yellow);
+}
+
+/* Keep favorited star visible even when mouse leaves the card */
+.recipe-fav-btn.active{
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  pointer-events: auto !important;
+}
+
+/* small press effect */
+.recipe-fav-btn:active{ transform: scale(0.95); }
+.recipe-card .over{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  z-index: 0;
+  overflow: hidden;
+}
+.recipe-card img{
+  transition: transform 320ms cubic-bezier(0.4,0,0.2,1);
+}
+.recipe-card:hover img{
+  transform: scale(1.06);
+}
 .ribbon {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: normal;
   color: #fff;
 }
 .ribbon {
@@ -352,5 +425,65 @@ article .article-content .content-img{
   transform: translate(calc((1 - cos(45deg))*100%), -100%) rotate(45deg);
   transform-origin: 0% 100%;
   background-color: var(--fish-red);
+}
+
+
+.play-btn-text {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* let clicks pass to play button if needed */
+}
+
+.play-btn-text .play-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 1px solid white;
+    font-size: 18px;
+    z-index: 3;
+    pointer-events: auto; /* play button itself can receive clicks */
+}
+
+.play-circle-text {
+  position: absolute;
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+  /* no visible background so the SVG text sits on the card */
+  background-color: var(--fish-red);
+  border-radius: 100%;
+  transform-origin: 50% 50%;
+  /* rotate the circular text continuously */
+  animation: spin 8s linear infinite;
+}
+
+.play-circle-text text {
+    fill: #ffffff;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 5px;
+
+}
+
+
+@keyframes spin {
+  from { transform: rotate(-90deg) rotate(0deg); }
+  to   { transform: rotate(-90deg) rotate(360deg); }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .play-circle-text { animation: none !important; }
 }
 /*----------------endSpecialRecipes----------------*/
